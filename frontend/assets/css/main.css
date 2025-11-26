@@ -1,0 +1,316 @@
+/* --- Root Variables (Premium "Logoipsum" Theme) --- */
+:root {
+    --user-accent: #0052D4;   /* A strong, premium blue */
+    --admin-accent: #02A85C;  /* The minty green from the inspiration */
+    --background-color: #f4f7f6; /* Very light gray background */
+    --card-bg: #ffffff;         /* Pure white cards */
+    --text-color: #333;
+    --text-muted: #6c757d;
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Global Body Styling --- */
+body {
+    background-color: var(--background-color) !important;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+}
+
+/* --- Smooth Scrolling & Anchor Link Fix --- */
+html {
+    scroll-behavior: smooth;
+}
+/* This targets any element with an ID, adding padding so it doesn't hide under the navbar */
+[id] {
+    scroll-margin-top: 100px;
+}
+/* --- End of Scroll Fix --- */
+
+
+#app {
+    background-color: transparent;
+    min-height: 100vh;
+    /* Add padding-top to body/app so content doesn't hide under the fixed navbar */
+    padding-top: 90px;
+}
+
+/* --- "Floating" White Navbar Styling --- */
+.navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--card-bg) !important;
+    /* Make it float on top */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000 !important;
+}
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #555 !important;
+    transition: color 0.2s ease;
+}
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.router-link-active {
+    color: var(--admin-accent) !important;
+}
+.navbar-text.admin-text {
+    color: var(--admin-accent) !important;
+}
+.navbar-text.user-text {
+    color: var(--user-accent) !important;
+}
+
+/* --- "Floating" Card Styling (Default for ALL cards) --- */
+.card {
+    border-radius: 0.75rem !important;
+    border: none !important;
+    box-shadow: var(--shadow-sm) !important;
+    background-color: var(--card-bg) !important;
+}
+
+/* --- Center Cards for Login, Welcome, Register --- */
+.auth-page-card {
+    margin: 2rem auto; /* Center it with top margin */
+    padding: 2.5rem;
+    color: #333;
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.home-welcome-card {
+    max-width: 700px;
+    text-align: center;
+}
+.login-card {
+    max-width: 450px;
+}
+.register-card {
+    max-width: 550px;
+}
+
+/* --- NEW STYLES FOR HOMEPAGE REDESIGN --- */
+.hero-section {
+    min-height: 80vh;
+    padding: 2rem 0; /* Add some vertical padding */
+}
+
+.hero-car-image {
+    max-width: 100%;
+    height: auto;
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.section-title {
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 2.5rem;
+}
+
+.feature-card {
+    border: none;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+}
+.feature-icon {
+    font-size: 3rem;
+    color: var(--admin-accent);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+.feature-card h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.feature-card p {
+    color: var(--text-muted);
+}
+
+/* Top Picks / Car Samples */
+.top-pick-card {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%; /* Ensure cards are same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden; /* Hide overflowing images */
+}
+
+.top-pick-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.top-pick-card img {
+    max-width: 90%; /* Smaller width for stacked look */
+    height: auto;
+    margin: 0 auto 0.5rem auto; /* Center image, add margin below */
+    transition: transform 0.3s ease;
+}
+
+.top-pick-card:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.top-pick-card-price {
+    font-weight: 700;
+    color: var(--user-accent);
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+/* Contact Section Styling */
+.contact-section {
+    background: linear-gradient(135deg, var(--user-accent), #003a8c);
+    color: white;
+    padding: 5rem 0;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-md);
+}
+.contact-section .form-control,
+.contact-section .form-select,
+.contact-section .input-group-text {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+.contact-section .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.contact-section .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+    color: white;
+}
+.contact-section .form-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+.contact-section .btn-success {
+    background-color: var(--admin-accent);
+    border-color: var(--admin-accent);
+}
+.contact-section .btn-success:hover {
+    background-color: #028a4a;
+    border-color: #028a4a;
+}
+/* --- END OF NEW HOMEPAGE STYLES --- */
+
+
+/* --- Dashboard Summary Card Styling --- */
+.stat-card {
+    border: none;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease-in-out;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.stat-card-admin {
+    border-top: 5px solid var(--admin-accent);
+}
+.stat-card-user {
+    border-top: 5px solid var(--user-accent);
+}
+.stat-card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.stat-card-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.stat-card-icon {
+    font-size: 3rem;
+    color: var(--admin-accent);
+    opacity: 0.3;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.stat-card-icon-user {
+    color: var(--user-accent);
+    opacity: 0.2;
+}
+
+/* --- Button Styling --- */
+.btn {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+.btn-success {
+    background-color: var(--admin-accent);
+    border-color: var(--admin-accent);
+    box-shadow: 0 4px 15px rgba(2, 168, 92, 0.2);
+}
+.btn-success:hover {
+    background-color: #028a4a;
+    border-color: #028a4a;
+    transform: translateY(-2px);
+}
+.btn-primary {
+    background-color: var(--user-accent);
+    border-color: var(--user-accent);
+    box-shadow: 0 4px 15px rgba(0, 82, 212, 0.2);
+}
+.btn-primary:hover {
+    background-color: #0041a3;
+    border-color: #0041a3;
+    transform: translateY(-2px);
+}
+
+/* --- Input Field Styling (for icons) --- */
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(0, 82, 212, 0.2);
+    border-color: var(--user-accent);
+}
