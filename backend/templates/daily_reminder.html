@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Parking Notification</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: auto; background-color: #2c3e50; color: #ecf0f1; padding: 30px; border-radius: 8px; }
+        h1 { color: #3498db; text-align: center; }
+        p { line-height: 1.6; }
+        .footer { font-size: 12px; text-align: center; color: #95a5a6; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Parking Notification</h1>
+        <p>Hello {{ user.first_name }},</p>
+        <p>We noticed you haven't made any parking reservations in a while.</p>
+        <p>Parking spots are available near you! Book now to secure your spot.</p>
+        <p class="footer">This message was sent automatically by the Smart Parking System.</p>
+    </div>
+</body>
+</html>

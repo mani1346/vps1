@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Daily Summary</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: auto; background-color: #2c3e50; color: #ecf0f1; padding: 30px; border-radius: 8px; }
+        h1, h2 { color: #3498db; }
+        h1 { text-align: center; }
+        ul { padding-left: 0; list-style: none; }
+        li { background-color: #34495e; margin-bottom: 10px; padding: 15px; border-radius: 4px; font-size: 1.1rem; }
+        li strong { color: #3498db; display: block; font-size: 1.3rem; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Admin Summary</h1>
+        <p>Hello {{ user.first_name }},</p>
+        <p>Here is your summary for <strong>{{ report_date }}</strong>:</p>
+
+        <h2>Quick Stats</h2>
+        <ul>
+            <li>
+                <strong>₹{{ "%.2f"|format(stats.revenue_24h) }}</strong>
+                Total Revenue (Last 24h)
+            </li>
+            <li>
+                <strong>{{ stats.new_bookings_24h }}</strong>
+                New Bookings (Last 24h)
+            </li>
+            <li>
+                <strong>{{ stats.occupied_now }}</strong>
+                Current Occupied Spots
+            </li>
+            <li>
+                <strong>{{ stats.available_now }}</strong>
+                Current Available Spots
+            </li>
+        </ul>
+        <p style="text-align: center; font-size: 0.9rem; color: #95a5a6; margin-top: 20px;">
+            This is an automated daily report.
+        </p>
+    </div>
+</body>
+</html>
